@@ -25,8 +25,10 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(4f)
                     .requiresTool().sounds(BlockSoundGroup.STONE)));
 
-            public static final Block PINK_GARNET_ORE = registerBlock("pink_garnet_ore",
-                    new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f), UniformIntProvider.create(2, 5)));
+    public static final Block PINK_GARNET_ORE = registerBlock("pink_garnet_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f), UniformIntProvider.create(2, 5)));
+    public static final Block DEEPSLATE_PINK_GARNET_ORE = registerBlock("deepslate_pink_garnet_ore",
+            new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.DEEPSLATE).strength(2f), UniformIntProvider.create(2, 5)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
