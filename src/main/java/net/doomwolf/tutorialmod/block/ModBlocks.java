@@ -2,8 +2,11 @@ package net.doomwolf.tutorialmod.block;
 
 import net.doomwolf.tutorialmod.TutorialMod;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -11,6 +14,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
 
@@ -21,6 +25,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create().strength(4f)
                     .requiresTool().sounds(BlockSoundGroup.STONE)));
 
+            public static final Block PINK_GARNET_ORE = registerBlock("pink_garnet_ore",
+                    new ExperienceDroppingBlock(FabricBlockSettings.copyOf(Blocks.STONE).strength(2f), UniformIntProvider.create(2, 5)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
